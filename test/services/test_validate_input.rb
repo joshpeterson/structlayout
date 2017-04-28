@@ -7,8 +7,8 @@ class ValidateInputTest < MiniTest::Test
                  { input: '#include  "foo.h" struct Test { int i; };',
                    result: false, error_message: "We cannot compute the layout \
 for files with relative include paths. Not to worry though! You can use relative \
-include paths by running layout on your machine. Download it here: \
-https://github.com/joshpeterson/layout"}]
+include paths by running layout on your machine. Download it \
+<a href=\"https://github.com/joshpeterson/layout\">here</a>." }]
 
     test_data.each { |data| validate_input(data) }
   end
