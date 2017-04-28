@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div>
+      <h1>Struct Layout - Know Your Types</h1>
+      <ul>
+        <li>How big are your types?</li>
+        <li>Do they contain wasted space?</li>
+        <li>Is the field layout optimal?</li>
+      </ul>
+      <p>Add your C or C++ struct or class below to generate code that will
+      show the layout of your code with your compiler.</p>
+      <%= form_for :layout, :url => layouts_path, :remote => true,
+        :html => { :id => 'layout_form' } do |f| %>
+        <p>
+          <%= f.radio_button :type, 'cpp', :checked => true %> C++
+          <%= f.radio_button :type, 'c' %> C
+        </p>
+        <p>
+          <%= f.text_area :code, class: 'code', rows: '20', style: 'width:100%;' %>
+        </p>
+        <p>
+          <%= f.submit "Compute Layout", class: 'btn btn-success' %>
+        </p>
+      <% end %>
+    </div>
+    <div>
+      <h1>Results</h1>
+      <p>Use this code with your compiler to quickly see the layout of the
+      struct or class.</p>
+      <div id='show_result'></div>
+    </div>
+  </div>
+</div>

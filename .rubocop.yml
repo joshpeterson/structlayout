@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - bin/*
+    - vendor/**/*
+    - app/controllers/letsencrypt_controller.rb
+Rails:
+  Enabled: true
+Rails/HttpPositionalArguments:
+  Enabled: false # This cop only applies to Rails 5
+Metrics/LineLength:
+  Max: 83
+Style/Documentation:
+  Enabled: false
+#Metrics/MethodLength:
+#  Max: 60
+#Metrics/BlockLength:
+#  Max: 60
+#Metrics/AbcSize:
+#  Enabled: false
+#Metrics/ClassLength:
+#  Enabled: false
