@@ -1,5 +1,5 @@
 class ExecuteLayout
   def self.call(path)
-    `../layout/layout #{path}`
+    `./layout #{path}`
   end
 end
