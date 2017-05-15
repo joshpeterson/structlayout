@@ -13,6 +13,8 @@ Metrics/LineLength:
   Max: 83
 Style/Documentation:
   Enabled: false
+Style/ClassVars:
+  Enabled: false
 #Metrics/MethodLength:
 #  Max: 60
 #Metrics/BlockLength:
