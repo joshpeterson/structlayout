@@ -1,6 +1,5 @@
 class HtmlifyOutput
   def self.call(input)
-    # output = input.gsub('<', '&lt;').gsub('>', '&gt;')
     highlight(input)
   end
 

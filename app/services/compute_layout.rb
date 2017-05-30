@@ -1,12 +1,13 @@
 class ComputeLayout
   def self.call(input, type)
-    output = 'Error'
+    output = ''
     begin
       path = CreateTempFile.call(input, type)
-      output = ExecuteLayout.call(path)
+      stdout, stderr, status = ExecuteLayout.call(path)
     ensure
       DeleteTempFile.call(path)
     end
-    HtmlifyOutput.call(output)
+    output = FormatError.call(stderr) if status != 0
+    output + HtmlifyOutput.call(stdout)
   end
 end
