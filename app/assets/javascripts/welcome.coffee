@@ -13,5 +13,6 @@ configureAce = ->
       $('.code').ace({ theme: 'textmate', lang: 'c_cpp' });
       editor = $('.code').data('ace').editor.ace;
       editor.setShowPrintMargin(false);
+      editor.focus();
 
 $(document).ready(configureAce)
