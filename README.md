@@ -9,6 +9,6 @@ Struct Layout uses the following other projects:
 
 * The [layout utility](https://github.com/joshpeterson/layout)
 * [Ruby on Rails](http://rubyonrails.org/)
-* The [Ace] code editor(https://ace.c9.io/)
+* The [Ace](https://ace.c9.io/) code editor
 
 It is licensed under the [MIT license](http://opensource.org/licenses/MIT).
