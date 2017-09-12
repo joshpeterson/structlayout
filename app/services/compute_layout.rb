@@ -1,9 +1,9 @@
 class ComputeLayout
-  def self.call(input, type)
+  def self.call(input, type, flags)
     output = ''
     begin
       path = CreateTempFile.call(input, type)
-      stdout, stderr, status = ExecuteLayout.call(path)
+      stdout, stderr, status = ExecuteLayout.call(path, flags)
     ensure
       DeleteTempFile.call(path)
     end

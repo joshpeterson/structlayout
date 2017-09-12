@@ -16,6 +16,10 @@
           <%= f.radio_button :type, 'c' %> C
         </p>
         <p>
+        <%= f.text_area :flags, rows: '1', style: 'width:100%;',
+          :placeholder => 'Clang command line flags (optional)' %>
+        </p>
+        <p>
           <%= f.text_area :code, class: 'code', rows: '10', style: 'width:100%;' %>
         </p>
         <p>

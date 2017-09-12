@@ -7,9 +7,11 @@ class ExecuteLayout
                '-I/usr/include/c++/6/backward '\
                '-I/usr/include/x86_64-linux-gnu '\
                '-I/usr/include'
-  def self.call(path)
+  def self.call(path, flags)
     Dir.chdir('cde-package/cde-root/home/josh/layout') do
-      stdout, stderr, status = Open3.capture3("./layout.cde #{path} #{@@includes}")
+      stdout, stderr, status = Open3.capture3(
+        "./layout.cde #{path} #{@@includes} #{flags}"
+      )
       return stdout, strip_filenames(stderr), status
     end
   end

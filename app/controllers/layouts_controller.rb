@@ -6,7 +6,8 @@ class LayoutsController < ApplicationController
     if !result.success
       render plain: result.message
     else
-      @output = ComputeLayout.call(input, type)
+      flags = params[:layout]['flags']
+      @output = ComputeLayout.call(input, type, flags)
       render :show
     end
   end
