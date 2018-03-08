@@ -1,10 +1,10 @@
 require 'open3'
 
 class ExecuteLayout
-  @@includes = '-I/usr/lib/llvm-3.8/lib/clang/3.8.0/include '\
-               '-I/usr/include/c++/6 '\
-               '-I/usr/include/x86_64-linux-gnu/c++/6 '\
-               '-I/usr/include/c++/6/backward '\
+  @@includes = '-I/usr/lib/llvm-5.0/lib/clang/5.0.0/include '\
+               '-I/usr/include/c++/7.2.0 '\
+               '-I/usr/include/x86_64-linux-gnu/c++/7 '\
+               '-I/usr/include/c++/7.2.0/backward '\
                '-I/usr/include/x86_64-linux-gnu '\
                '-I/usr/include'
   def self.call(path, flags)
