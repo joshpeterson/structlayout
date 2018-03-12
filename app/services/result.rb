@@ -3,7 +3,7 @@ class Result
   attr_accessor :message
 
   def initialize(status, message)
-    @success = status == :successful ? true : false
+    @success = status == :successful
     @message = message
   end
 
