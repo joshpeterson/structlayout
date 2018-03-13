@@ -1,16 +1,17 @@
 require 'open3'
 
 class ExecuteLayout
-  @@includes = '-I/usr/lib/llvm-5.0/lib/clang/5.0.0/include '\
-               '-I/usr/include/c++/7.2.0 '\
-               '-I/usr/include/x86_64-linux-gnu/c++/7 '\
-               '-I/usr/include/c++/7.2.0/backward '\
-               '-I/usr/include/x86_64-linux-gnu '\
-               '-I/usr/include'
+  @@includes = '-Iusr/lib/llvm-5.0/lib/clang/5.0.0/include '\
+               '-Iusr/include/c++/7.2.0 '\
+               '-Iusr/include/x86_64-linux-gnu/c++/7 '\
+               '-Iusr/include/c++/7.2.0/backward '\
+               '-Iusr/include/x86_64-linux-gnu '\
+               '-Iusr/include'
   def self.call(path, flags)
-    Dir.chdir('cde-package/cde-root/home/josh/layout') do
+    Dir.chdir('layout-package') do
       stdout, stderr, status = Open3.capture3(
-        "./layout.cde #{path} #{@@includes} #{flags}"
+        { 'LD_LIBRARY_PATH' => '.' },
+        "./layout #{path} #{@@includes} #{flags}"
       )
       return stdout, strip_filenames(stderr), status
     end
