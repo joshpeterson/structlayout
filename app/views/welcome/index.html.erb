@@ -23,17 +23,20 @@
           <%= f.text_area :code, class: 'code', rows: '10', style: 'width:100%;' %>
         </p>
         <p>
-          <%= f.submit "Compute Layout", class: 'btn btn-success' %>
+          <%= f.submit "Generate Layout Code", class: 'btn btn-success' %>
         </p>
       <% end %>
     </div>
     <div>
-      <h1>Results</h1>
-      <p>Use this code with your compiler to quickly see the layout of the
-      struct or class. Download the
-      <a href="https://github.com/joshpeterson/layout">layout</a> utility to
-      generate this code on your machine.</p>
+      <h1>Results <span id='copy_button'></span></h1>
+      <p>Use this code with <i>your</i> compiler or
+        <a target="_blank" href="https://wandbox.org">Wandbox <i class="glyphicon glyphicon-new-window"></i></a>
+        to quickly see the layout of the struct or class.</p>
       <div id='show_result'></div>
+    </div>
+    <div>
+      Download the <a href="https://github.com/joshpeterson/layout">layout</a>
+      utility to generate this code on your machine.</p>
     </div>
     <a href="https://github.com/joshpeterson/structlayout">
       <img style="position: absolute; top: 0; right: 0; border: 0;"

@@ -3,7 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $(document).on 'ajax:success', '#layout_form', (evt, data) ->
-      $('#show_result').html(data)
+      $('#copy_button').html('<button class="btn btn-default clipboard-btn" title="Copy generated code to clipboard" data-clipboard-action="copy" data-clipboard-target="#show_result">' +
+        '<i class=\"glyphicon glyphicon-copy\"></i>' +
+      '</button>');
+      $('#show_result').html(data);
 
 $ ->
   $(document).on 'ajax:failure', '#layout_form', (evt, data) ->

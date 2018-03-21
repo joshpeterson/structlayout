@@ -30,6 +30,8 @@ gem 'bootstrap-sass'
 
 gem 'jquery-ace-rails'
 
+gem 'clipboard-rails'
+
 # This it for heroku
 gem 'rails_12factor'
 

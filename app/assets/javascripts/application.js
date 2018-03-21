@@ -17,4 +17,5 @@
 //= require ace/mode-c_cpp
 //= require jquery-ace.min
 //= require jquery_ujs
+//= require clipboard
 //= require_tree .
