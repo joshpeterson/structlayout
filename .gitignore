@@ -20,4 +20,4 @@
 # Ignore binary the layout utility
 layout
 layout.tar.gz
-cde-package/
+layout-package/
