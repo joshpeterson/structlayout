@@ -1,3 +1,5 @@
 class WelcomeController < ApplicationController
-  def index; end
+  def index
+    @initial_code = params[:code] if params[:code].present?
+  end
 end

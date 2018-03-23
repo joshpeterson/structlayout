@@ -9,6 +9,11 @@
       </ul>
       <p>Add your C or C++ struct or class below to generate code that will
       show the layout of your code with your compiler.</p>
+      <p> Examples:
+        <a href="/?code=%2F%2F%20Example%3A%20Interleaved%20Bools%0D%0A%2F%2F%20This%20struct%20takes%2016%20bytes%20on%20many%20compilers.%0D%0A%2F%2F%20It%20uses%2012%20bytes%20if%20the%20bools%20are%20together.%0D%0Astruct%20Hero%0D%0A%7B%0D%0A%20%20%20%20bool%20enabled%3B%0D%0A%20%20%20%20int%20health%3B%0D%0A%20%20%20%20bool%20alive%3B%0D%0A%20%20%20%20int%20level%3B%0D%0A%7D%3B">Interleaved Bools</a>,
+        <a href="/?code=%2F%2F%20Example%3A%20Double%20Alignment%0D%0A%2F%2F%20Doubles%20usually%20require%208%20byte%20alignment.%0D%0A%2F%2F%20The%20DoubleVector%20struct%20is%20twice%20the%20size%0D%0A%2F%2F%20of%20the%20FloatVector%20struct.%0D%0Astruct%20DoubleVector%0D%0A%7B%0D%0A%20%20%20%20double%20magnitude%3B%0D%0A%20%20%20%20int%20direction%3B%0D%0A%7D%3B%0D%0A%0D%0Astruct%20FloatVector%0D%0A%7B%0D%0A%20%20%20%20float%20magnitude%3B%0D%0A%20%20%20%20int%20direction%3B%0D%0A%7D%3B">Double Alignment</a>,
+        <a href="/?code=%2F%2F%20Example%3A%20Tight%20Packing%0D%0A%2F%2F%20Many%20compilers%20accept%20pack%20directives.%0D%0A%0D%0A%2F%2F%20For%20serialization%2C%20we%20might%20want%20to%20avoid%20padding%0D%0A%2F%2F%20to%20keep%20this%20data%20as%20small%20as%20possible.%0D%0A%23pragma%20pack%28push%2C%204%29%0D%0Astruct%20SerializedHero%0D%0A%7B%0D%0A%20%20%20%20int%20level%3B%0D%0A%20%20%20%20double%20health%3B%0D%0A%7D%3B%0D%0A%23pragma%20pack%28pop%29%0D%0A%0D%0A%2F%2F%20At%20runtime%2C%20we%20might%20benefit%20from%0D%0A%2F%2F%20better%20performance%20of%208%20byte%20alignment.%0D%0Astruct%20RuntimeHero%0D%0A%7B%0D%0A%20%20%20%20int%20level%3B%0D%0A%20%20%20%20double%20health%3B%0D%0A%7D%3B">Tight Packing</a>
+      </p>
       <%= form_for :layout, :url => layouts_path, :remote => true,
         :html => { :id => 'layout_form' } do |f| %>
         <p>
@@ -20,7 +25,8 @@
           :placeholder => 'Clang command line flags (optional)' %>
         </p>
         <p>
-          <%= f.text_area :code, class: 'code', rows: '10', style: 'width:100%;' %>
+          <%= f.text_area :code, class: 'code', rows: '10', style: 'width:100%;',
+              :value => @initial_code %>
         </p>
         <p>
           <%= f.submit "Generate Layout Code", class: 'btn btn-success' %>
