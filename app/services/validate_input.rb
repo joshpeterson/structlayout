@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ValidateInput
   @@relative_include_message = "We can only compute the layout for files with \
 system include paths. Not to worry though! You can run layout on your machine. \

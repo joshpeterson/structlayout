@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HtmlifyOutput
   def self.call(input)
     highlight(input)

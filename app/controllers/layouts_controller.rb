@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LayoutsController < ApplicationController
   def create
     input = params[:layout]['code']

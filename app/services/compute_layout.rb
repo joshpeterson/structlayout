@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ComputeLayout
   def self.call(input, type, flags)
     output = ''
