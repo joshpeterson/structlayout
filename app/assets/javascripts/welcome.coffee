@@ -19,3 +19,14 @@ configureAce = ->
       editor.focus();
 
 $(document).ready(configureAce)
+
+$ ->
+  $('#link_button').click ->
+    type =$("#layout_form input[type='radio']:checked").val();
+    encodedType = encodeURIComponent(type);
+    args = $('#layout_flags').val();
+    encodedArgs = encodeURIComponent(args);
+    code = $('#layout_code').val();
+    encodedCode = encodeURIComponent(code);
+    base = 'https://structlayout.herokuapp.com/';
+    $('#link').html("#{base}?code=#{encodedCode};args=#{encodedArgs};type=#{encodedType}");
