@@ -29,4 +29,4 @@ $ ->
     code = $('#layout_code').val();
     encodedCode = encodeURIComponent(code);
     base = 'https://structlayout.herokuapp.com/';
-    $('#link').html("#{base}?code=#{encodedCode};args=#{encodedArgs};type=#{encodedType}");
+    $('#link').html("<code>#{base}?code=#{encodedCode};args=#{encodedArgs};type=#{encodedType}</code>");
