@@ -16,9 +16,19 @@ configureAce = ->
       $('.code').ace({ theme: 'textmate', lang: 'c_cpp' });
       editor = $('.code').data('ace').editor.ace;
       editor.setShowPrintMargin(false);
+      editor.getSession().on 'change', saveToLocalStorage;
       editor.focus();
 
-$(document).ready(configureAce)
+initialize = ->
+  restoreFromLocalStorage();
+  configureAce();
+
+$(document).ready(initialize)
+
+$ ->
+  $('#layout_flags').on 'keyup', saveToLocalStorage;
+  $("#layout_type_c").on 'change', saveToLocalStorage;
+  $("#layout_type_cpp").on 'change', saveToLocalStorage;
 
 $ ->
   $('#link_button').click ->
@@ -30,3 +40,24 @@ $ ->
     encodedCode = encodeURIComponent(code);
     base = 'https://structlayout.herokuapp.com/';
     $('#link').html("<code>#{base}?code=#{encodedCode};args=#{encodedArgs};type=#{encodedType}</code>");
+
+saveToLocalStorage = ->
+  if (localStorage)
+    type = $("#layout_form input[type='radio']:checked").val();
+    args = $('#layout_flags').val();
+    code = $('#layout_code').val();
+    localStorage['type'] = type;
+    localStorage['args'] = args;
+    localStorage['code'] = code;
+
+restoreFromLocalStorage = ->
+  if (localStorage)
+    type = localStorage['type'];
+    args = localStorage['args'];
+    code = localStorage['code'];
+    if type == 'c'
+      $('#layout_type_c').prop('checked', true);
+    else
+      $('#layout_type_cpp').prop('checked', true);
+    $('#layout_flags').val(args);
+    $('#layout_code').val(code);
