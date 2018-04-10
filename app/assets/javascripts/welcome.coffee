@@ -51,7 +51,7 @@ saveToLocalStorage = ->
     localStorage['code'] = code;
 
 restoreFromLocalStorage = ->
-  if (localStorage)
+  if (localStorage && !window.location.search)
     type = localStorage['type'];
     args = localStorage['args'];
     code = localStorage['code'];
