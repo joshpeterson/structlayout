@@ -3,7 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $(document).on 'ajax:success', '#layout_form', (evt, data) ->
-      $('#copy_button').html('<button class="btn btn-default clipboard-btn" title="Copy generated code to clipboard" data-clipboard-action="copy" data-clipboard-target="#show_result">' +
+      $('#copy_button').html('<button class="btn btn-default clipboard-btn" ' +
+        'title="Copy generated code to clipboard" data-clipboard-action="copy" ' +
+        'data-clipboard-target="#show_result">' +
         '<i class=\"glyphicon glyphicon-copy\"></i>' +
       '</button>');
       $('#show_result').html(data);
@@ -39,7 +41,17 @@ $ ->
     code = $('#layout_code').val();
     encodedCode = encodeURIComponent(code);
     base = 'https://structlayout.herokuapp.com/';
-    $('#link').html("<code>#{base}?code=#{encodedCode};args=#{encodedArgs};type=#{encodedType}</code>");
+    $('#link').html('<div class="input-group">' +
+        "<input type=\"text\" class=\"form-control\" id='permalink' " +
+          "value=\"#{base}?code=#{encodedCode};args=#{encodedArgs};" +
+          "type=#{encodedType}\">" +
+          '<span class="input-group-btn">' +
+          '<button type="button" class="btn btn-default clipboard-btn"' +
+          ' title="Copy permalink to clipboard"' +
+          ' data-clipboard-action="copy" data-clipboard-target="#permalink">' +
+          '<i class=\"glyphicon glyphicon-copy\"></i></button>' +
+        '</span>' +
+      '</div>');
 
 saveToLocalStorage = ->
   if (localStorage)
