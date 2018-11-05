@@ -34,6 +34,8 @@ gem 'jquery-ace-rails'
 
 gem 'clipboard-rails'
 
+gem "loofah", ">= 2.2.3"
+
 # This it for heroku
 gem 'rails_12factor'
 
