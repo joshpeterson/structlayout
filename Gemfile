@@ -36,6 +36,8 @@ gem 'clipboard-rails'
 
 gem 'loofah', '>= 2.2.3'
 
+gem 'rack', '>= 1.6.11'
+
 # This it for heroku
 gem 'rails_12factor'
 
