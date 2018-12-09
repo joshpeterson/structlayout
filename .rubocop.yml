@@ -9,6 +9,8 @@ Rails:
   Enabled: true
 Rails/HttpPositionalArguments:
   Enabled: false # This cop only applies to Rails 5
+Rails/AssertNot:
+    Enabled: false
 Metrics/LineLength:
   Max: 83
 Style/Documentation:
