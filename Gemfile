@@ -28,7 +28,7 @@ end
 # Syntax highlight the output
 gem 'rouge'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 gem 'jquery-ace-rails'
 
