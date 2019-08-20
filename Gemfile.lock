@@ -110,7 +110,7 @@ GEM
       minitest (~> 5.0)
     multi_json (1.13.1)
     nenv (0.3.0)
-    nokogiri (1.10.1)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -234,6 +234,7 @@ DEPENDENCIES
   jquery-rails
   loofah (>= 2.2.3)
   minitest-rg
+  nokogiri (~> 1.10.4)
   puma
   rack (>= 1.6.11)
   rails (= 4.2.11.1)
