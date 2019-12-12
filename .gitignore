@@ -21,3 +21,5 @@
 layout
 layout.tar.gz
 layout-package/
+
+*.swp
