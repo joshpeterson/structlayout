@@ -30,7 +30,8 @@
               :value => @initial_code %>
         </p>
         <p>
-          <%= f.submit "Generate Layout Code", class: 'btn btn-success' %>
+          <%= f.submit "Generate Layout Code", class: 'btn btn-success', 
+            data: { disable_with: false } %>
           <button type="button" class="btn btn-default" id="link_button">Permalink</button>
           <div id='link'></div>
         </p>
