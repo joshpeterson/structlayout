@@ -38,7 +38,7 @@ gem 'loofah', '>= 2.2.3'
 
 gem 'rack', '>= 1.6.11'
 
-gem 'nokogiri', '~> 1.11.4'
+gem 'nokogiri', '~> 1.12.5'
 
 # This it for heroku
 gem 'rails_12factor'
